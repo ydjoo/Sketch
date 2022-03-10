@@ -17,13 +17,16 @@ function App() {
         "/home/ydjoo/project/Sketch/sketch_back/images/outputs/output1.png",
     },
   ]);
-
   return (
-    <div>
-      <h3>Input Image List!</h3>
-      <InputList inputImages={inputImages} outputImages={outputImages} />
-    </div>
+    <h1>This is react result!!</h1> 
   );
+
+  // return (
+  //   <div>
+  //     <h3>Input Image List!</h3>
+  //     <InputList inputImages={inputImages} outputImages={outputImages} />
+  //   </div>
+  // );
 }
 
 export default App;
