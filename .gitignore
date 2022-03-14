@@ -1,2 +1,5 @@
 sketch_front/node_modules/
 .vscode/
+.DS_Store
+sketch_front/.DS_Store
+sketch_front/build/
