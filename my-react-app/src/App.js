@@ -24,15 +24,15 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Welcome to  <code>Sketchers </code> Project!
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://tims.tmax.co.kr"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          TIMS
 
           <h3>
             {testData}
