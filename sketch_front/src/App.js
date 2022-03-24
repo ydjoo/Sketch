@@ -59,9 +59,9 @@ const App = () => {
           <InputLoadUI />
         </LayoutDiv>
         <ContentDiv>
-          <div style={{ border: "1px solid #54BAB9", width: "100%", height: "50%" }}></div>
+          <div style={{ border: "1px solid #54BAB9", width: "100%", height: "100%" }}></div>
           <div style={{ width: "100%", height: "30%" }}></div>
-          <div style={{ border: "1px solid #54BAB9", width: "100%", height: "50%" }}></div>
+          <div style={{ border: "1px solid #54BAB9", width: "100%", height: "100%" }}></div>
         </ContentDiv>
       </MainBox>
     </WholePage>
