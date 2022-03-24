@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import InputLoadUI from './UI/InputLoadUI';
+//import view from './UI/imageViewer';
 
 const WholePage = styled.div`
   width: 100vw;
