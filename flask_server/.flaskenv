@@ -1,0 +1,2 @@
+FLASK_APP=flask_server.main
+FLASK_ENV=development

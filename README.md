@@ -7,6 +7,10 @@
 
 <p align="center"> <img src="./example.png" width="360px" height="150px" title="Example"/> </p>
 
+## (4주차) CSS 연습 & MobX 실습
+* (미완) CSS / styled-component 활용 웹페이지 꾸미기
+* (시작 전) MobX 적용 예시 만들기
+
 ---
 
 > **실행시키기**
