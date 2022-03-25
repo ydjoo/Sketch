@@ -5,12 +5,13 @@
 * Flask backend 에서 받은 이미지를 흑백으로 변환하여 React frontend 로 반환 (Response)
 * React front 에서 flask backend 로부터 받아온 이미지를 웹 화면에 띄우기 
 
-<p align="center"> <img src="./example.png" width="360px" height="150px" title="Example"/> </p>
+<p align="center"> <img src="./README_images/3.png" width="500px" height="200px" title="3"/> </p>
 
 ## (4주차) CSS 연습 & MobX 실습
-* (미완) CSS / styled-component 활용 웹페이지 꾸미기
+* (미완) CSS / styled-components 활용 웹페이지 꾸미기
 * (시작 전) MobX 적용 예시 만들기
 
+<p align="center"> <img src="./README_images/4-1.png" width="500px" height="200px" title="4-1"/> </p>
 ---
 
 > **실행시키기**

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../../styles/Form.css';
 import styled from 'styled-components';
 
@@ -15,17 +15,17 @@ const FormDiv = styled.div`
     color: rgb(53, 8, 253);
 `;
 
-//<div className='form'>
+
 function Form(props) {
     return (
-    <div className='form'>
+    <FormDiv>
         <input
             type="file"
             name="file"
             placeholder="Upload an image"
             onChange={props.onChange}
         />
-    </div>
+    </FormDiv>
     );
 }
 
