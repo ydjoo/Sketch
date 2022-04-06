@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import InputLoadUI from './UI/InputLoadUI';
+import ContentUI from './UI/ContentUI';
 
 const WholePage = styled.div`
   width: 100vw;
@@ -59,9 +60,7 @@ const App = () => {
           <InputLoadUI />
         </LayoutDiv>
         <ContentDiv>
-          <div style={{ border: "1px solid #54BAB9", width: "100%", height: "50%" }}></div>
-          <div style={{ width: "100%", height: "30%" }}></div>
-          <div style={{ border: "1px solid #54BAB9", width: "100%", height: "50%" }}></div>
+          <ContentUI />
         </ContentDiv>
       </MainBox>
     </WholePage>
