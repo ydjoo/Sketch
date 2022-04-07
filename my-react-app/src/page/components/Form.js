@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../styles/Form.css';
 import styled from 'styled-components';
+import { useStores } from '../stores/Context';
 
 const FormDiv = styled.div`
     background-color: #fcf2bce1;
@@ -16,14 +17,45 @@ const FormDiv = styled.div`
 `;
 
 
-function Form(props) {
+function Form() {
+    const [inputImage, setInput] = useState('')
+    const { imageStore } = useStores();
+
+    const fetchImage = async (data) => {
+        const res = await fetch(
+            'http://localhost:8890/image_greyscale',
+            {method: 'POST', body: data}
+        )
+        const imageBlob = await res.blob();
+        imageStore.createOutputURL(imageBlob);
+        //const imageObjectURL = URL.createObjectURL(imageBlob);
+        //setOutput(imageObjectURL);
+    };
+    
+    
+    useEffect(() => {
+        if (!inputImage || inputImage === '' ) return;
+        imageStore.createInputURL(inputImage);
+
+        const data = new FormData();
+        data.append('file', inputImage);
+        
+        imageStore.changeLoading();
+        fetchImage(data).then(() => imageStore.changeLoading());
+
+    }, [inputImage]);
+
+    function onImageChange(e) {
+        setInput(e.target.files[0]);
+    }
+
     return (
     <FormDiv>
         <input
             type="file"
             name="file"
             placeholder="Upload an image"
-            onChange={props.onChange}
+            onChange={onImageChange}
         />
     </FormDiv>
     );

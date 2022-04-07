@@ -1,5 +1,7 @@
 {
   "dependencies": {
+    "mobx": "^6.5.0",
+    "mobx-react": "^7.3.0",
     "styled-components": "^5.3.5"
   }
 }
