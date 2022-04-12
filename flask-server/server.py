@@ -1,4 +1,5 @@
 from importlib.metadata import requires
+from io import BytesIO
 import json
 from flask import Flask, request, send_file
 from PIL import Image
@@ -8,7 +9,7 @@ app = Flask(__name__)
 
 @app.route("/result")
 def result():
-    return {"result": 123}
+    return {"result": 'flask_test.jpg'}
 
 @app.route("/calculate/double", methods=['POST'])
 def double():
@@ -21,9 +22,11 @@ def grayscale():
     file = request.files['file']
     image = Image.open(file)
     imageGray = image.convert('L')
-    result_name = 'flask_test.jpg'
-    imageGray.save('../client/public/%s' % result_name)
-    return {'result': result_name}
+
+    img_io = BytesIO()
+    imageGray.save(img_io, 'JPEG')
+    img_io.seek(0)
+    return send_file(img_io, attachment_filename='gray.jpg', mimetype='image/jpeg')
 
 
 if __name__=="__main__":

@@ -3,9 +3,20 @@ import axios from 'axios'
 
 
 function App() {
-  const [result, setResult] = useState('')
+  const [result, setResult] = useState()
   const [userInput, setUserInput] = useState()
   const [imageURL, setImageURL] = useState()
+
+  // GET
+  // useEffect(() => {
+  //   axios.get("/result")
+  //   .then((res) => {
+  //     console.log(res.data)
+  //     setResult(res.data.result)
+  //   })
+  //   .catch((error) => console.log(error))
+  // })
+
 
   function handleInputChange(event) {
     const file = event.target.files[0]
@@ -25,29 +36,44 @@ function App() {
     const data = new FormData()
     data.append('file', userInput)
 
+  //   const res = fetch(
+  //     '/grayscale', {method: 'POST', body: data}
+  //   )
+  //   const imageBlob = res.blob()
+  //   const imageObjectURL = URL.createObjectURL(imageBlob)
+  //   setResult(imageObjectURL)
+  // }
     // POST
     axios({
       method: 'post',
       url: '/grayscale',
       data: data,
       headers: { "Content-Type": "multipart/form-data" },
+      responseType: 'blob',
     }
     ).then((res) => {
-      console.log(res.data)
-      setResult(res.data.result)
+      console.log(res)
+      const responseBlob = new Blob([res.data], {type:"image/jpeg"});
+      const fileURL = URL.createObjectURL(responseBlob);
+      // const reader = new FileReader();
+      // reader.onloadend = () => {
+      //   setResult(reader.result)
+      // }
+      // reader.readAsDataURL(responseBlob)
+      setResult(fileURL)
     })
     .catch((error) => console.log(error))
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <input 
         type='file' 
         accept='image/jpg, image/png, image/jpeg, image/gif'
         name='input'
         onChange={handleInputChange}></input>
-        <input type='submit'></input>
+        <button onClick={handleSubmit}>Submit</button>
       </form>
       <img src={imageURL}></img>
       <img src={result}></img>
