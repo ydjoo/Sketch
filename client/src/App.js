@@ -36,13 +36,6 @@ function App() {
     const data = new FormData()
     data.append('file', userInput)
 
-  //   const res = fetch(
-  //     '/grayscale', {method: 'POST', body: data}
-  //   )
-  //   const imageBlob = res.blob()
-  //   const imageObjectURL = URL.createObjectURL(imageBlob)
-  //   setResult(imageObjectURL)
-  // }
     // POST
     axios({
       method: 'post',
