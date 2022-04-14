@@ -1,10 +1,12 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import axios from 'axios'
 
+import { StyleTransferContext } from '../states/StyleTransferContext'
 
-function PostImage(props) {
+
+function PostImage() {
     const [userInput, setUserInput] = useState()
+    const {setImageURL, setResultURL} = useContext(StyleTransferContext)
 
     function handleInputChange(event) {
         const file = event.target.files[0]
@@ -13,7 +15,7 @@ function PostImage(props) {
         // for preview
         const reader = new FileReader()
         reader.onloadend = () => {
-        props.setImageURL(reader.result)
+        setImageURL(reader.result)
         }
         reader.readAsDataURL(file)
     }
@@ -35,7 +37,7 @@ function PostImage(props) {
         .then((res) => {
         const responseBlob = new Blob([res.data], {type:"image/jpeg"});
         const fileURL = URL.createObjectURL(responseBlob);
-        props.setResultURL(fileURL)
+        setResultURL(fileURL)
         })
         .catch((error) => console.log(error))
     }

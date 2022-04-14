@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
+
+import { StyleTransferContext } from '../states/StyleTransferContext'
 
 
-function ShowImage(props) {
+function ShowImage() {
+    const {imageURL, resultURL} = useContext(StyleTransferContext)
     return (
         <>
-            <img src={props.imageURL} width={"50%"} ></img>
-            <img src={props.resultURL} width={"50%"}></img>
+            <img src={imageURL} width={"50%"} ></img>
+            <img src={resultURL} width={"50%"}></img>
         </>
 
     )

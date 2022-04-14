@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import PostImage from './PostImage'
 import ShowImage from './ShowImage'
+import { StyleTransferContext } from '../states/StyleTransferContext'
 
 
 function StyleTransferPage() {
@@ -11,8 +12,11 @@ function StyleTransferPage() {
     
     return (
         <>
-        <PostImage setResultURL={setResultURL} setImageURL={setImageURL}/>
-        <ShowImage resultURL={resultURL} imageURL={imageURL}/>
+        <StyleTransferContext.Provider value={{resultURL, setResultURL, imageURL, setImageURL}}>
+            <PostImage />
+            <ShowImage />
+        </StyleTransferContext.Provider>
+
         </>
     )
 }
