@@ -1,3 +1,5 @@
 import { createContext } from "react";
 
-export const StyleTransferContext = createContext(null)
+import { StyleTransferStore } from "./StyleTransferStore";
+
+export const StyleTransferContext = createContext(new StyleTransferStore())
