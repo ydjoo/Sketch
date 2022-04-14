@@ -9,9 +9,13 @@
 
 ## (4주차) CSS 연습 & MobX 실습
 * (미완) CSS / styled-components 활용 웹페이지 꾸미기
-* (시작 전) MobX 적용 예시 만들기
 
 <p align="center"> <img src="./README_images/4-1.png" width="500px" height="200px" title="4-1"/> </p>
+
+## (5~6주차) CSS 연습 & MobX 실습
+* MobX 적용 : 기존 State 치환
+
+<p align="center"> <img src="./README_images/5.png" width="500px" height="200px" title="5"/> </p>
 ---
 
 > **실행시키기**
