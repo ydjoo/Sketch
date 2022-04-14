@@ -1,14 +1,10 @@
 import './styles/App.css';
-import styled from 'styled-components';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Jumbotron from './page/components/Jumbotron';
 import Form from './page/components/Form';
 import ImageContainer from './page/components/ImageContainer';
-import { useStores } from './page/stores/Context';
-import { Observer, observer } from "mobx-react";
 
-
-const App = observer( () => {
+function App() {
 
   return (<>
       <div className="App">
@@ -21,6 +17,6 @@ const App = observer( () => {
       </div>
       </>
   )
-})
+}
 
 export default App;

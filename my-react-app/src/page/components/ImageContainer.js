@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import React, { useState, useEffect } from 'react';
+import React  from 'react';
 import { useStores } from '../stores/Context';
+import { observer } from 'mobx-react';
 
 const ImageContainerStyle = styled.div`
   display: flex;
@@ -21,23 +22,25 @@ const ImgStyle = styled.img`
   margin-bottom: 20px;
 `;
 
-export default function ImageContainer() {
+function ImageContainer() {
     const { imageStore } = useStores();
 
     return (
     <ImageContainerStyle>
         <ImageBoxStyle color='cornflowerblue'>
             <h3>Input Image</h3>
-            <ImgStyle src={imageStore.image.inputURL} />
+            <ImgStyle src={imageStore.inputURL} />
         </ImageBoxStyle>
         <ImageBoxStyle>
             <h3>Output Image</h3>
-            {imageStore.image.loading ? (
+            {imageStore.loading ? (
                 <h3>Loading...</h3>
             ) : (
-                <ImgStyle src={imageStore.image.outputURL}/>
+                <ImgStyle src={imageStore.outputURL}/>
             )}
         </ImageBoxStyle>
     </ImageContainerStyle>
     );
 }
+
+export default observer(ImageContainer);
