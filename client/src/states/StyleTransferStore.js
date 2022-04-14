@@ -2,19 +2,16 @@ import { action, makeObservable, observable} from 'mobx'
 
 
 export class StyleTransferStore {
-    rootStore;
+    resultURL = null;
+    imageURL = null;
 
-    resultURL
-    imageURL
-
-    constructor(root) {
+    constructor() {
         makeObservable(this, {
             resultURL: observable,
             imageURL: observable,
             setResultURL: action,
             setImageURL: action
         })
-        this.rootStore = root 
     }
 
     setResultURL(url) {
